@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# init env before starting dpdk
+# https://github.com/alandtsang/mydpdkdns
+
 if [ $# == 0 ]
 then
     echo "Usage: sudo ./init_dpdk dev"
