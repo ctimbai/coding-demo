@@ -8,6 +8,9 @@ print_usage() {
 	echo "-r :for release"
 }
 
+cd $RTE_SDK
+make config T=x86_64-native-linuxapp-gcc
+#sed -ri 's,(PMD_PCAP=).*,\1y,' build/.config
 
 if [ $# -eq 1 ]
 then

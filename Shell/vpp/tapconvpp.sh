@@ -27,8 +27,8 @@ for $tap in $tapset
 do
 	ip link set $tap netns "ns`echo $tap|tr -cd '[0-9]'`"
 done
-
 for ((i=0;i<$N;i++))
+
 do
 	docker exec --privileged=true ${NS[i]} ip addr add 192.168.$i.2/24 dev ${tapset[i]}
 	docker exec --privileged=true ${NS[i]} ip link set ${tapset[i]} up
